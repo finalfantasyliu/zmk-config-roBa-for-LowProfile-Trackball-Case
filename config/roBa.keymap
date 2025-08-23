@@ -33,11 +33,6 @@
             bindings = <&kp TAB>;
             key-positions = <1 2>;
         };
-
-        caps {
-            bindings = <&kp CAPS>;
-            key-positions = <39 6>;
-        };
     };
 
     macros {
@@ -100,10 +95,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W          &kp E        &kp R        &kp T                                                  &kp Y       &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S          &kp D        &kp F        &kp G             &trans                &kp ESCAPE     &kp H       &kp J  &kp K      &kp L    &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X          &kp C        &kp V        &kp B             &kp LEFT_ALT          &kp RIGHT_ALT  &kp N       &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp END           &kp PAGE_DOWN  &kp PAGE_UP  &lt 2 SPACE  &kp LEFT_CONTROL  &kp LEFT_COMMAND      &kp ENTER      &bs_sym_td                             &kp DEL
+&kp Q             &kp W          &kp E        &kp R        &kp T                                                       &kp Y       &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S          &kp D        &kp F        &kp G             &trans                &kp ESCAPE          &kp H       &kp J  &kp K      &kp L    &kp SEMICOLON
+&mt LEFT_SHIFT Z  &kp X          &kp C        &kp V        &kp B             &kp LEFT_ALT          &mt RIGHT_ALT CAPS  &kp N       &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp END           &kp PAGE_DOWN  &kp PAGE_UP  &lt 2 SPACE  &kp LEFT_CONTROL  &kp LEFT_COMMAND      &kp ENTER           &bs_sym_td                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
