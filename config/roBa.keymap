@@ -60,14 +60,14 @@
         window_left: window_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT &kp LEFT_CONTROL>;
             label = "WINDOW_LEFT";
         };
 
         window_right: window_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp RIGHT>;
+            bindings = <&kp LEFT_CONTROL &kp RIGHT &kp RIGHT_CONTROL>;
             label = "WINDOW_RIGHT";
         };
     };
@@ -95,7 +95,7 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W          &kp E        &kp R        &kp T                                                       &kp Y       &kp U  &kp I      &kp O    &kp P
+&kp Q             &lt 3 W        &kp E        &kp R        &kp T                                                       &kp Y       &kp U  &kp I      &kp O    &kp P
 &kp A             &kp S          &kp D        &kp F        &kp G             &trans                &kp ESCAPE          &kp H       &kp J  &kp K      &kp L    &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X          &kp C        &kp V        &kp B             &kp LEFT_ALT          &mt RIGHT_ALT CAPS  &kp N       &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp END           &kp PAGE_DOWN  &kp PAGE_UP  &lt 2 SPACE  &kp LEFT_CONTROL  &kp LEFT_COMMAND      &kp ENTER           &bs_sym_td                             &kp DEL
@@ -115,19 +115,19 @@
 
         NUM {
             bindings = <
-&trans  &kp F7  &kp F8  &kp F9  &kp F12                                       &trans  &kp N7        &kp N8        &kp NUMBER_9  &trans
-&trans  &kp F4  &kp F5  &kp F6  &kp F11  &kp LC(LA(KP_NUMBER_0))      &trans  &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
-&trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans                       &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0
+&none   &kp F7  &kp F8  &kp F9  &kp F12                                       &none   &kp N7        &kp N8        &kp NUMBER_9  &trans
+&none   &kp F4  &kp F5  &kp F6  &kp F11  &kp LC(LA(KP_NUMBER_0))      &trans  &none   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
+&none   &kp F1  &kp F2  &kp F3  &kp F10  &trans                       &trans  &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0
 &trans  &trans  &trans  &trans  &trans   &trans                       &trans  &trans                                            &trans
             >;
         };
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans        &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &window_left  &trans  &trans  &window_right  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans        &trans  &trans  &trans         &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
