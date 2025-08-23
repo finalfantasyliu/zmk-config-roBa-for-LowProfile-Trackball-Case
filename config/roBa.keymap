@@ -60,14 +60,28 @@
         window_left: window_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_CONTROL>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LEFT_CONTROL>;
+
             label = "WINDOW_LEFT";
         };
 
         window_right: window_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp RIGHT>;
+            bindings =
+                <&macro_press>,
+                <&kp RIGHT_CONTROL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp RIGHT_CONTROL>;
+
             label = "WINDOW_RIGHT";
         };
     };
