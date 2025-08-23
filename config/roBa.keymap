@@ -60,14 +60,14 @@
         window_left: window_left {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp LEFT &kp LEFT_CONTROL>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT>;
             label = "WINDOW_LEFT";
         };
 
         window_right: window_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL &kp RIGHT &kp RIGHT_CONTROL>;
+            bindings = <&kp LEFT_CONTROL &kp RIGHT>;
             label = "WINDOW_RIGHT";
         };
     };
