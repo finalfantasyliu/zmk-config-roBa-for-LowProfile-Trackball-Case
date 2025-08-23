@@ -61,6 +61,20 @@
             bindings = <&kp COLON &kp COLON>;
             label = "NAMESPACE_OPERATOR";
         };
+
+        window_left: window_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp LEFT>;
+            label = "WINDOW_LEFT";
+        };
+
+        window_right: window_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL &kp RIGHT>;
+            label = "WINDOW_RIGHT";
+        };
     };
 
     behaviors {
@@ -77,11 +91,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BS_SYM_TD";
             #binding-cells = <0>;
-            bindings =
-                <&kp BACKSPACE>,
-                <&kp BACKSPACE>,
-                <&mo 1>,
-                <&kp BACKSPACE>;
+            bindings = <&lt 1 BACKSPACE>, <&kp BACKSPACE>;
         };
     };
 
@@ -96,7 +106,7 @@
 &kp END           &kp PAGE_DOWN  &kp PAGE_UP  &lt 2 SPACE  &kp LEFT_CONTROL  &kp LEFT_COMMAND      &kp ENTER      &bs_sym_td                             &kp DEL
             >;
 
-            sensor-bindings = <&inc_dec_kp K_SCROLL_UP K_SCROLL_DOWN>;
+            sensor-bindings = <&inc_dec_kp LC(LEFT_ARROW) RC(RIGHT)>;
         };
 
         SYM {
@@ -130,10 +140,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &trans  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
         };
 
