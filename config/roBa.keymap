@@ -33,6 +33,11 @@
             bindings = <&kp TAB>;
             key-positions = <1 2>;
         };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <6 7>;
+        };
     };
 
     macros {
@@ -101,6 +106,8 @@
             label = "BS_SYM_TD";
             #binding-cells = <0>;
             bindings = <&lt 1 BACKSPACE>, <&kp BACKSPACE>;
+
+            tapping-term-ms = <150>;
         };
     };
 
@@ -144,7 +151,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         MOUSE {
