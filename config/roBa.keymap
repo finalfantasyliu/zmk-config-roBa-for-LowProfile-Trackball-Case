@@ -107,7 +107,7 @@
             #binding-cells = <0>;
             bindings = <&lt 1 BACKSPACE>, <&kp BACKSPACE>;
 
-            tapping-term-ms = <150>;
+            tapping-term-ms = <100>;
         };
     };
 
