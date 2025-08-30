@@ -2,6 +2,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
+
 
 &mt {
     flavor = "balanced";
@@ -14,7 +16,17 @@
     quick-tap-ms = <150>;
 };
 
+// ✅ 讓「軌跡球一動就暫時進 MOUSE 層(索引 4)」，空閒 800ms 或按鍵就關層
+&trackball_listener {
+    // <層索引  逾時毫秒>
+    input-processors = <&zip_temp_layer 4 800>;
 
+    // （可選）只有在 SCROLL 層(索引 5)時，將 X/Y 轉成卷動
+    scroller {
+        layers = <5>;
+        input-processors = <&zip_xy_to_scroll_mapper>;
+    };
+}
 
 / {
     combos {
