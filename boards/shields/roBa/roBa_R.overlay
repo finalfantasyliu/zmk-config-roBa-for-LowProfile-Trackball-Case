@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -19,6 +20,8 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+ /* 當有軌跡球事件時，臨時啟用第4層(MOUSE層)，逾時5000毫秒後關閉 */
+        input-processors = <&zip_temp_layer 4 5000>;  
     };
 };
 
@@ -58,4 +61,12 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
+};
+
+/* 配置 zip_temp_layer：排除特定鍵位，使其不會導致滑鼠層退出 */
+&zip_temp_layer {
+    /* 這裡填入滑鼠左鍵、右鍵及捲動切換鍵所在的矩陣位置 */
+    excluded-positions = < 18 /* 左鍵位置 */
+                           19 /* 右鍵位置 */
+                           34 /* 滾動模式切換鍵位置 */ >;
 };
