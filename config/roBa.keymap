@@ -49,6 +49,11 @@
             bindings = <&kp ENTER>;
             key-positions = <18 19>;
         };
+
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <11 12>;
+        };
     };
 
     macros {
