@@ -24,10 +24,7 @@
     flavor = "balanced";
 };
 
-&trackball {
-    automouse-layer = <MOUSE>;
-    scroll-layers = <SCROLL>;
-};
+// automouse 和 scroll 由 overlay 的 zip_temp_layer 和 input processor 處理
 
 // 點擊滑鼠鍵時延長 MOUSE 層超時至 2 秒
 &mkp_input_listener { input-processors = <&zip_temp_layer MOUSE 2000>; };
