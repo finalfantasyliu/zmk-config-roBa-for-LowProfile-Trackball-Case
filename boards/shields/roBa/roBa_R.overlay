@@ -63,10 +63,12 @@
     };
 };
 
-/* 配置 zip_temp_layer：排除特定鍵位，使其不會導致滑鼠層退出 */
+/* AML 防誤觸：G/B 滑鼠鍵 + 修飾鍵不退出 MOUSE 層 */
 &zip_temp_layer {
-    /* 這裡填入滑鼠左鍵、右鍵及捲動切換鍵所在的矩陣位置 */
-    excluded-positions = < 18 /* 左鍵位置 */
-                           19 /* 滾輪位置 */
-                           20 /* 右鍵位置 */ >;
+    require-prior-idle-ms = <200>;
+    excluded-positions = < 14 /* G = MB1 */
+                           26 /* B = MB2 */
+                           22 /* Z = Shift (mod-tap) */
+                           38 /* LCTRL */
+                           39 /* LCMD */ >;
 };
