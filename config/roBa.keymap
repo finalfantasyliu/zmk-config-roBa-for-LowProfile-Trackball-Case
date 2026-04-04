@@ -7,6 +7,8 @@
 // roBa 層號對照 moNa2（MOUSE/SCROLL 因驅動需求固定在 4/5）:
 // moNa2: Default(0) SYM(1) NUM(2) MEDIA(3) BT(4)    MOUSE(5) SCROLL(6) VIM(7) DESKTOP(8)
 // roBa:  Default(0) SYM(1) NUM(2) MEDIA(3) MOUSE(4) SCROLL(5) BT(6)    VIM(7) DESKTOP(8)
+#undef ZMK_POINTING_DEFAULT_SCRL_VAL
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 200
 #define MOUSE 4
 #define SCROLL 5
 #define VIM 7
@@ -96,7 +98,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             tap-ms = <20>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;  // 反轉：配合 roBa encoder 接線方向
         };
 
         scroll_right_left: mouse_wheel_right_left {
