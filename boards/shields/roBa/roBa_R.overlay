@@ -63,12 +63,14 @@
     };
 };
 
-/* AML 防誤觸：G/B 滑鼠鍵 + 修飾鍵不退出 MOUSE 層 */
+/* AML 防誤觸：G/B 滑鼠鍵 + 修飾鍵不退出 MOUSE 層（對照 moNa2） */
 &zip_temp_layer {
     require-prior-idle-ms = <200>;
     excluded-positions = < 14 /* G = MB1 */
                            26 /* B = MB2 */
                            22 /* Z = Shift (mod-tap) */
-                           38 /* LCTRL */
-                           39 /* LCMD */ >;
+                           34 /* LEFT_SHIFT (thumb) */
+                           35 /* LCTRL (thumb) */
+                           36 /* LEFT_ALT (thumb) */
+                           37 /* LEFT_COMMAND (thumb) */ >;
 };
